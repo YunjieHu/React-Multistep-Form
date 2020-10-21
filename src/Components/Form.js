@@ -20,7 +20,6 @@ class Form extends Component {
             },
             errors: {},
             currentStep: 1,
-            submitted: false
         };
     }
 
@@ -69,30 +68,29 @@ class Form extends Component {
     }
 
     render(){
-        const { currentStep }=this.state;
-        console.log(this.state.user.birthday);
+        const { currentStep, user, errors }=this.state;
         return(
         <div className="container" >
             <div className="Form">
             <h1 className="Head">Register</h1>
             <Step1 
-            step = {this.state.currentStep}
-            user = {this.state.user} 
-            errors ={this.state.errors}
+            step = {currentStep}
+            user = {user} 
+            errors ={errors}
             onChange = {this.handleChange}
             onError = {this.handleErrors}
             />
             <Step2 
-            step = {this.state.currentStep}
-            user = {this.state.user} 
-            errors ={this.state.errors}
+            step = {currentStep}
+            user = {user} 
+            errors ={errors}
             onChange = {this.handleChange}
             onError = {this.handleErrors}
             />
             <Step3 
-            step = {this.state.currentStep}
-            user = {this.state.user} 
-            errors ={this.state.errors}
+            step = {currentStep}
+            user = {user} 
+            errors ={errors}
             onChange = {this.handleChange}
             onError = {this.handleErrors}
             />
